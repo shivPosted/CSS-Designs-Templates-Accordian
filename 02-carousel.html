@@ -20,17 +20,47 @@
         font-family: "Inter", sans-serif;
         line-height: 1;
       }
-      .icon,
       .border-cut {
         position: absolute;
         padding: 20px;
         border-radius: 50%;
-        stroke: #000;
+        /* stroke: #000; */
         width: 24px;
         height: 24px;
         background-color: #fff;
       }
+      .icon {
+        border: none;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        background-color: #fff;
+        position: absolute;
+        border-radius: 50%;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        stroke: #fcd34d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
 
+      .icon-left {
+        /*In relation to the parent element*/
+        top: 50%; /*move element to the starting of the middle axis of the parent element*/
+        left: 0;
+
+        /*In relation to elemnt itself*/
+        transform: translate(
+          -50%,
+          -50%
+        ); /*put the element 50% of its size above y-axis and to the left of x-axis*/
+      }
+      .icon-right {
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -50%);
+      }
       .top-left {
         color: #fff;
         top: -2px;
@@ -67,13 +97,15 @@
         display: flex;
         width: 950px;
         gap: 15px;
-        margin: 150px auto;
+        margin: 200px auto;
         padding: 24px;
+        padding-right: 32px;
       }
       .testimonial-text {
         color: #fff;
-        font-size: 24px;
+        font-size: 25px;
         margin: 24px 0;
+        line-height: 1.2;
         /* margin-top: 40px; */
         font-weight: 500;
       }
@@ -86,6 +118,27 @@
         font-size: 14px;
         color: #fef3c7;
       }
+
+      .dots {
+        display: flex;
+        gap: 10px;
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+      .dot {
+        border-radius: 50%;
+        border: 2px solid #fcd34d;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        width: 12px;
+        height: 12px;
+      }
+      .dot--fill {
+        background-color: #fcd34d;
+      }
     </style>
     <title>Document</title>
   </head>
@@ -94,8 +147,8 @@
       <img src="maria.jpg" alt="Maria-portrait" />
       <blockquote>
         <p class="testimonial-text">
-          "Lorem ipsum dolor sit amet consectetur adip elit. Eveniet magni fugit
-          consequuntur maiores"
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque illo
+          praesentium error dicta culpa voluptate laudantium soluta eos quod."
         </p>
         <p class="testimonial-author">-Maria De Ariot</p>
         <p class="testimonial-author-job">Senior Business Analyst</p>
@@ -104,7 +157,7 @@
       <div class="border-cut top-right">tl</div>
       <div class="border-cut bottom-left">tl</div>
       <div class="border-cut bottom-right">tl</div>
-      <!-- <svg
+      <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -131,7 +184,13 @@
           stroke-linejoin="round"
           d="M8.25 4.5l7.5 7.5-7.5 7.5"
         />
-      </svg> -->
+      </svg>
+      <div class="dots">
+        <div class="dot">&nbsp;</div>
+        <div class="dot dot--fill">&nbsp;</div>
+        <div class="dot">&nbsp;</div>
+        <div class="dot">&nbsp;</div>
+      </div>
     </div>
   </body>
 </html>
