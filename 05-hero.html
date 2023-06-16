@@ -13,6 +13,8 @@
     />
 
     <style>
+      /*/the inner div is moving when we resize the page because the header height is set to 100vh and in absolute inner div is at 50% so when we resize the window the viewport changes and inner div try to remain at 50% from top of relative element*/
+
       * {
         margin: 0;
         padding: 0;
@@ -21,13 +23,12 @@
       }
 
       header {
-        /* background-color: red; */
         margin-bottom: 80px;
         height: 100vh;
         position: relative;
         background-image: linear-gradient(
-            rgba(56, 56, 56, 0.604),
-            rgba(68, 68, 68, 0.604)
+            rgba(48, 48, 48, 0.604),
+            rgba(48, 48, 48, 0.604)
           ),
           url(/hero.jpg);
         background-size: cover;
@@ -35,10 +36,10 @@
       nav {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 64px;
         font-size: 20px;
         font-weight: 500;
-        /* background-color: green; */
+        color: #fff;
+        padding-top: 32px; /*padding instead of margin beacuse margin will create a space and shift the image too downwards*/
       }
 
       h1 {
@@ -46,14 +47,13 @@
         line-height: 1;
         letter-spacing: -2px;
         font-weight: 700;
-        margin-bottom: 56px;
+        margin-bottom: 32px;
       }
 
       .intro p {
-        font-size: 18px;
-        line-height: 1.5;
+        font-size: 20px;
+        line-height: 1.4;
         margin-bottom: 32px;
-        font-weight: 400;
       }
 
       .btn:link {
@@ -67,18 +67,29 @@
         padding: 16px 32px;
         border-radius: 12px;
       }
+      .inner {
+        width: 50%;
+      }
 
       .center {
         width: 1200px;
         margin: 0 auto;
-        color: #fff;
       }
       .intro {
-        width: 37%;
-        /* background-color: green; */
         position: absolute;
         top: 50%;
         transform: translate(0, -50%);
+        color: #fff;
+      }
+
+      .outer {
+        height: 100vh;
+        background-image: linear-gradient(
+          to right,
+          rgba(255, 0, 0, 0.401),
+          rgba(0, 0, 255, 0.488),
+          rgba(0, 128, 0, 0.497)
+        );
       }
     </style>
   </head>
@@ -89,17 +100,20 @@
           <div>LOGO</div>
           <div>NAVIGATION</div>
         </nav>
-        <div class="intro">
-          <h1>A Healthy meal delievered to your door, every single day</h1>
-          <p>
-            The smart 365-days-per-year subscription that will make you eat
-            healthy again.Tailored to your personal tastes and nutritional needs
-          </p>
-          <a href="#" class="btn">Start eating healthy</a>
+        <div class="intro center">
+          <div class="inner">
+            <h1>A Healthy meal delievered to your door, every single day</h1>
+            <p>
+              The smart 365-days-per-year subscription that will make you eat
+              healthy again.Tailored to your personal tastes and nutritional
+              needs
+            </p>
+            <a href="#" class="btn">Start eating healthy</a>
+          </div>
         </div>
       </div>
     </header>
-    <section class="center">
+    <section class="center outer">
       <h2>About our product</h2>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae ipsam
