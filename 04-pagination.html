@@ -35,13 +35,13 @@
         align-items: center;
         justify-content: center;
         gap: 15px;
+        scale: 1.2;
       }
 
-      .icon-left,
-      .icon-right {
+      .icon {
         width: 26px;
         height: 26px;
-        border: 1px solid #22c55e;
+        border: 0.8px solid #22c55e;
         padding: 2px;
         scale: 1.1;
         border-radius: 50%;
@@ -54,8 +54,7 @@
         color: white;
       }
 
-      .icon-left:hover,
-      .icon-right:hover {
+      .icon:hover {
         border: none;
         background-color: #22c55e;
         stroke: white;
@@ -88,6 +87,10 @@
         background-color: #22c55e;
         color: white;
       }
+
+      span {
+        color: #959595;
+      }
     </style>
   </head>
   <body>
@@ -98,7 +101,7 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="icon icon-left"
+        class="icon"
       >
         <path
           stroke-linecap="round"
@@ -115,7 +118,7 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="icon icon-right"
+        class="icon"
       >
         <path
           stroke-linecap="round"
